@@ -6,7 +6,7 @@
         "README.md",
         "LICENSE",
         "dist/ng-lipsum.js",
-        "dist/ng-lipsum.min.js",
+        "dist/ng-lipsum.min.js"
     ],
     "keywords": [
         "lorem",
