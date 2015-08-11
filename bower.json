@@ -1,12 +1,17 @@
 {
     "name": "ngLipsum",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Simple Lorem Ipsum based dummy content generator directive and services for Angular",
     "main": [
         "README.md",
         "LICENSE",
         "dist/ng-lipsum.js",
         "dist/ng-lipsum.min.js"
+    ],
+    "ignore": [
+        "gulpfile.js",
+        "package.json",
+        "src"
     ],
     "keywords": [
         "lorem",

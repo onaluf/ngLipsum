@@ -707,7 +707,7 @@ angular.module('ngLipsum').provider('ngLipsum', function() {
          * example p5: 5 paragraph
          *
          */
-        var motifRegExp = /^([0-9]+)-?([0-9]*)([wps])$/;
+        var motifRegExp = /^([0-9]+)-?([0-9]*)([wWps])$/;
         var getFromMotif = function (motif) {
             var matchedMotif = motifRegExp.exec(motif);
             var value = '';
