@@ -1,0 +1,23 @@
+{
+    'name': 'ngLipsum',
+    'version': '0.1.1',
+    'description': 'Simple Lorem Ipsum generator directive and services for Angular',
+    'main': [
+        'README.md',
+        'LICENSE',
+        'dist/ng-lipsum.js',
+        'dist/ng-lipsum.min.js',
+    ],
+    'license': 'MIT',
+    'authors': [
+        { 
+          'name': 'Selim Arsever',
+          'url': 'http://selim.arsever.ch'
+      }
+    ],
+    'homepage': 'https://github.com/onaluf/ngLipsum',
+    'repository': { 
+        'type' : 'git',
+        'url' : 'https://github.com/onaluf/ngLipsum.git'
+    }
+}

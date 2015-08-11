@@ -1,0 +1,39 @@
+{
+    "name": "ngLipsum",
+    "version": "0.1.1",
+    "description": "Simple Lorem Ipsum generator directive and services for Angular ",
+    "keywords": "lorem ipsum, lipsum, angular, dummy text",
+    "homepage": "https://github.com/onaluf/ngLipsum",
+    "bugs": "https://github.com/onaluf/ngLipsum/issues",
+    "license": "MIT",
+    "url" : {
+        "type": "http://opensource.org/licenses/ISC",
+        "url": "http://opensource.org/licenses/MIT"
+    },
+    "author": {
+        "name": "Selim Arsever",
+        "url": "http://selim.arsever.ch"
+    },
+    "files": [
+        "README.md",
+        "LICENSE",
+        "dist"
+    ],
+    "main": "dist/ngLipsum.min.js",
+    "repository": { 
+        "type" : "git",
+        "url" : "https://github.com/onaluf/ngLipsum.git"
+    },
+    "devDependencies": {
+        "del": "~1.2.0",
+        "uglify-save-license": "~0.4.1",
+        "jshint-stylish": "~2.0.0",
+        "gulp": "~3.9.0",
+        "gulp-load-plugins": "~0.10.0",
+        "gulp-uglify": "~1.2.0",
+        "gulp-jshint": "~1.11.0",
+        "gulp-ng-annotate": "~1.0.0",
+        "gulp-util": "~3.0.5",
+        "gulp-concat" : "~2.6.0"
+    }
+}
