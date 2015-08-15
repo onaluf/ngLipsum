@@ -681,7 +681,7 @@ angular.module('ngLipsum').provider('ngLipsum', function() {
         this.dataset = _dataset;
     };
     
-    var Lipsum = function (dataset, datasetLength, $q, $sce) {
+    var Lipsum = function (dataset, datasetLength, $q) {
         var getWord = function() {
             return dataset[Math.round(Math.random() * datasetLength)];
         };
@@ -735,7 +735,7 @@ angular.module('ngLipsum').provider('ngLipsum', function() {
         var motifRegExp = /^([0-9]+)-?([0-9]*)([wWps])$/;
         var getFromMotif = function (motif) {
             var matchedMotif = motifRegExp.exec(motif);
-            var value = '';
+            var value = motif;
             if (matchedMotif) {
                 var from = parseInt(matchedMotif[1]);
                 var to = parseInt(matchedMotif[2]);
@@ -769,13 +769,13 @@ angular.module('ngLipsum').provider('ngLipsum', function() {
         this.get = function (input) {
             if (angular.isObject(input)){
                 var generated = {};
+                var that = this;
                 angular.forEach(input, function(value, key) {
-                    generated[key] = this.get(value);
+                    generated[key] = that.get(value);
                 });
                 return generated;
             } else {
-                return $sce.trustAsHtml(getFromMotif(input));
-                //return getFromMotif(input);
+                return getFromMotif(input);
             }
         };
 
@@ -793,8 +793,8 @@ angular.module('ngLipsum').provider('ngLipsum', function() {
         };
     };
     
-    this.$get = function ($q, $sce) {
-        return new Lipsum(this.dataset, this.dataset.length, $q, $sce);
+    this.$get = function ($q) {
+        return new Lipsum(this.dataset, this.dataset.length, $q);
     };
 });
 angular.module('ngLipsum').directive('ngBindLipsum', function(ngLipsum) {

@@ -1,6 +1,6 @@
 {
     "name": "ngLipsum",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Simple Lorem Ipsum based dummy content generator directive and services for Angular",
     "main": [
         "README.md",
@@ -11,7 +11,8 @@
     "ignore": [
         "gulpfile.js",
         "package.json",
-        "src"
+        "src",
+        "spec"
     ],
     "keywords": [
         "lorem",
@@ -31,5 +32,11 @@
     "repository": { 
         "type" : "git",
         "url" : "https://github.com/onaluf/ngLipsum.git"
+    },
+    "dependencies": {
+        "angular": "~1.4.0"
+    },
+    "devDependencies": {
+        "angular-mocks": "~1.4.0"
     }
 }
