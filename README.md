@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/onaluf/ngLipsum.svg?branch=master)](https://travis-ci.org/onaluf/ngLipsum)
 # ngLipsum
 Simple Lorem Ipsum based dummy content generator directive and services for Angular.
 
