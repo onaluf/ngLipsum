@@ -37,6 +37,12 @@ describe('ngLipsum', function () {
             expect(lastChar).toBe('.');
         });
         
+        it('should generate an array with the right values', function () {
+            var generated = ngLipsum.get(['1w', 5]);
+            
+            expect(generated.length).toBe(5);
+        });
+        
         it('should generate a litteral object with the right values', function () {
             var obj = {
                 a: 'wrong',
@@ -52,6 +58,20 @@ describe('ngLipsum', function () {
             expect(generated.b).not.toBe('1w');
             expect(generated.c.d).not.toBe('2w');
             expect(generated.c.d.split(' ').length).toBe(2);
+        });
+        
+        it('should generate object literal when inside arrays', function () {
+            var generated = ngLipsum.get([{a: '2w'}, 5]);
+            
+            expect(generated.length).toBe(5);
+            expect(generated[4].a.split(' ').length).toBe(2);
+        });
+        
+        it('should generate arrays when object literal', function () {
+            var generated = ngLipsum.get({a: ['2w', 5]});
+            
+            expect(generated.a).not.toBe(undefined);
+            expect(generated.a.length).toBe(5);
         });
     });
     

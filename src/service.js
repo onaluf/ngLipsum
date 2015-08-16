@@ -742,13 +742,32 @@ angular.module('ngLipsum').provider('ngLipsum', function() {
             return value;
         };
         this.get = function (input) {
-            if (angular.isObject(input)){
-                var generated = {};
-                var that = this;
+            var that = this;
+            
+            if (angular.isArray(input)) {
+                if (input.length === 2 || input.length === 3) {
+                    var motif = input[0];
+                    var length = input[1];
+                    var length2 = input[2];
+                    
+                    if(length2){
+                        length = random(length, length2);
+                    }
+                    
+                    var generatedArray = [];
+                    for (var i = 0; i < length; i++) {
+                        generatedArray.push(that.get(motif));
+                    }
+                    
+                    return generatedArray;
+                }
+                return input;
+            } else if (angular.isObject(input)){
+                var generatedObject = {};
                 angular.forEach(input, function(value, key) {
-                    generated[key] = that.get(value);
+                    generatedObject[key] = that.get(value);
                 });
-                return generated;
+                return generatedObject;
             } else {
                 return getFromMotif(input);
             }

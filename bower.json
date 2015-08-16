@@ -1,6 +1,6 @@
 {
     "name": "ngLipsum",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Simple Lorem Ipsum based dummy content generator directive and services for Angular",
     "main": [
         "README.md",
