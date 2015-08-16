@@ -39,6 +39,10 @@
                 $scope.motif = '{a:"2W",b:"1-5w"}';
             };
             
+            $scope.ex4 = function () {
+                $scope.motif = '{candidates: [{name: "1-3W", bio: "5-10s",resume: [{job_title: "2-5w", job_description: "2-5s"},5,8]},10]}';
+            };
+            
             $scope.ex1();
         });
     </script>
@@ -64,6 +68,7 @@
                 <span class="btn btn-default" ng-click="ex1()">Example 1: string</span>
                 <span class="btn btn-default" ng-click="ex2()">Example 2: array</span>
                 <span class="btn btn-default" ng-click="ex3()">Example 3: object literal</span>
+                <span class="btn btn-default" ng-click="ex4()">Example 4: complex example</span>
             </p>
             <div class="col-sm-6">
                 <textarea class="form-control code-input" ng-model="motif"></textarea>
