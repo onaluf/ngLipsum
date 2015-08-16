@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ng-lipsum sandbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="dist/ng-lipsum.min.js"></script>
+    <script>
+        angular.module('ngLipsumSandbox', ['ngLipsum']).controller('sandbox', function ($scope, ngLipsum) {
+            
+            $scope.$watch('motif', function () {
+                var parsed;
+                try {
+                    parsed = eval('(' + $scope.motif + ')');
+                } catch (e) {
+                    // silently fail   
+                }
+
+                if (parsed) {
+                    $scope.warning = false;
+                    $scope.generated = JSON.stringify(ngLipsum.get(parsed), null, '  ');
+                } else {
+                    $scope.warning = 'Parse error';
+                }
+            });
+            
+            $scope.ex1 = function () {
+                $scope.motif = '"2-5w"';
+            };
+            
+            $scope.ex2 = function () {
+                $scope.motif = '["2W",4,8]';
+            };
+            
+            $scope.ex3 = function () {
+                $scope.motif = '{a:"2W",b:"1-5w"}';
+            };
+            
+            $scope.ex1();
+        });
+    </script>
+    <style>
+        textarea.code-input {
+            height: 300px;
+            overflow: auto;
+            resize: none;
+        }
+        .ng-lipsum-output {
+            height: 300px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body ng-app="ngLipsumSandbox" ng-controller="sandbox">
+    <div class="container">
+        <div class="row">
+            <h1 class="col-xs-12">ngLipsum Sandbox</h1>
+            <p class="col-xs-12">Use the box on the left to type any kind of value that will be fed into <code>ngLipsum.get()</code>. The box on the left will show you the result. If you need inspiration you can also use the buttons bellow! For more information have a look at <a href="https://github.com/onaluf/ngLipsum">the project's page</a>.</p>
+            <p class="col-xs-12">
+                <span class="btn btn-default" ng-click="ex1()">Example 1: string</span>
+                <span class="btn btn-default" ng-click="ex2()">Example 2: array</span>
+                <span class="btn btn-default" ng-click="ex3()">Example 3: object literal</span>
+            </p>
+            <div class="col-sm-6">
+                <textarea class="form-control code-input" ng-model="motif"></textarea>
+            </div>
+            <div class="col-sm-6">
+                <pre class="ng-lipsum-output" ng-bind="generated"></pre>
+            </div>
+            <div class="col-xs-12">
+                <div class="alert alert-warning" role="alert" ng-if="warning"><i class="glyphicon glyphicon-exclamation-sign"></i> {{warning}}</div>
+            </div> 
+        </div>
+    </div>
+</body>
+
+</html>

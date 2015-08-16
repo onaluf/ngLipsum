@@ -742,8 +742,8 @@ angular.module('ngLipsum').provider('ngLipsum', function() {
                 var type = matchedMotif[3];
 
                 if (angular.isNumber(from)) {
-                    if (angular.isNumber(to)) {
-                        to = random(from, to);
+                    if (!isNaN(to)) {
+                        from = random(from, to);
                     }
                 } else {
                     from = 1;
