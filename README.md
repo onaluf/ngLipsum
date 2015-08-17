@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/onaluf/ngLipsum.svg?branch=master)](https://travis-ci.org/onaluf/ngLipsum)
+
+[![Build Status](https://travis-ci.org/onaluf/ngLipsum.svg?branch=master)](https://travis-ci.org/onaluf/ngLipsum) [![Bower version](https://img.shields.io/bower/v/ng-lipsum.svg)](http://bower.io/search/?q=ng-lipsum) [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 # ngLipsum
 Simple Lorem Ipsum based dummy content generator directive and services for Angular. You can play in [the sandbox](http://onaluf.github.io/ngLipsum/) to get an idea of how it works.
 
