@@ -182,7 +182,7 @@ angular.module('ngLipsum').provider('ngLipsum', function() {
         'illa', 'individua', 'et', 'solida', 'corpora', 'ferri', 'deorsum', 'suo', 'pondere', 'ad', 'lineam', 'hunc',
         'naturalem', 'esse', 'omnium', 'corporum', 'motum', 'Deinde', 'ibidem', 'homo', 'acutus', 'cum', 'illud',
         'ocurreret', 'si', 'omnia', 'deorsus', 'e', 'regione', 'ferrentur', 'et', 'ut', 'dixi', 'ad', 'lineam',
-        'numquam', 'fore', 'ut', 'atomus', 'altera', 'alteram', 'posset', 'attingere', 'itaque', '**', 'attulit',
+        'numquam', 'fore', 'ut', 'atomus', 'altera', 'alteram', 'posset', 'attingere', 'itaque', 'attulit',
         'rem', 'commenticiam', 'declinare', 'dixit', 'atomum', 'perpaulum', 'quo', 'nihil', 'posset', 'fieri',
         'minus', 'ita', 'effici', 'complexiones', 'et', 'copulationes', 'et', 'adhaesiones', 'atomorum', 'inter',
         'se', 'ex', 'quo', 'efficeretur', 'mundus', 'omnesque', 'partes', 'mundi', 'quaeque', 'in', 'eo', 'essent',
